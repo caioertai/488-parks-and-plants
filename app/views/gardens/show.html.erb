@@ -1,0 +1,8 @@
+<div class="container pt-5">
+  <h1><%= @garden.name %></h1>
+
+  <!-- List plants here: -->
+  <% @garden.plants.each do |plant| %>
+    <p><%= plant.name %></p>
+  <% end %>
+</div>
