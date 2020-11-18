@@ -1,8 +1,20 @@
-<div class="container pt-5">
-  <h1><%= @garden.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden.banner_url %>);">
+  <div class="container">
+    <h1><%= @garden.name %></h1>
+  </div>
+</div>
 
+<div class="container pt-5">
   <!-- List plants here: -->
-  <% @garden.plants.each do |plant| %>
-    <p><%= plant.name %></p>
-  <% end %>
+  <div class="row">
+    <% @garden.plants.each do |plant| %>
+      <div class="col-4">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.image_url %>)">
+          <%= plant.name %>
+          <%= link_to '&times;'.html_safe, plant, method: :delete, class: "card-remove-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <p><%= link_to "Add plant", new_garden_plant_path(@garden), class: "btn btn-primary" %></p>
 </div>

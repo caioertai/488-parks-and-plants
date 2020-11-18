@@ -1,0 +1,8 @@
+<div class="container pt-5">
+  <h1>Adding new plant in <%= @garden.name %></h1>
+  <%= simple_form_for [@garden, @plant] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :image_url %>
+    <%= f.button :submit, class: "btn-primary" %>
+  <% end %>
+</div>
