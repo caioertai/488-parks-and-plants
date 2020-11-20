@@ -1,19 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden.banner_url %>);">
-  <div class="container">
-    <h1 class="mb-3"><%= @garden.name %></h1>
-    <%= link_to "Add plant", new_garden_plant_path(@garden), class: "btn btn-primary" %>
-  </div>
-</div>
+<%= render "gardens/banner", garden: @garden %>
 
 <div class="container pt-5">
   <!-- List plants here: -->
   <div class="row">
     <% @garden.plants.each do |plant| %>
       <div class="col-4">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.image_url %>)">
-          <%= plant.name %>
-          <%= link_to '&times;'.html_safe, plant, method: :delete, class: "card-remove-link" %>
-        </div>
+        <%= render "plants/card", plant: plant %>
       </div>
     <% end %>
   </div>

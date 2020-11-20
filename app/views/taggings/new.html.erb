@@ -1,0 +1,9 @@
+<div class="container pt-5">
+  <h1>Tagging <%= @plant.name %></h1>
+  <!-- plant_taggings_path -->
+  <!-- POST /plants/6/taggings -->
+  <%= simple_form_for [@plant, @tagging] do |f| %>
+    <%= f.association :tag %>
+    <%= f.button :submit, class: "btn-primary" %>
+  <% end %>
+</div>

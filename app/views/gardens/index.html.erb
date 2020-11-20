@@ -2,7 +2,7 @@
   <h1>Gardens</h1>
   <ul>
     <% @gardens.each do |garden| %>
-      <li><%= garden.name %></li>
+      <li><%= link_to garden.name, garden %></li>
     <% end %>
   </ul>
 </div>

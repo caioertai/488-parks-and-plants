@@ -1,0 +1,6 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= garden.banner_url %>);">
+  <div class="container">
+    <h1 class="mb-3"><%= garden.name %></h1>
+    <%= link_to "Add plant", new_garden_plant_path(garden), class: "btn btn-primary" %>
+  </div>
+</div>
